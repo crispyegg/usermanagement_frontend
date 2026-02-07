@@ -54,7 +54,7 @@ const AddUsers = () => {
     // Clear errors if valid
     setErrors({})
 
-    axios.post(`https://usermanagement-server-v9wf.onrender.com`, adduser)
+    axios.post(`https://usermanagement-server-v9wf.onrender.com/users`, adduser)
       .then(() => {
         alert('User Added Successfully')
       })
