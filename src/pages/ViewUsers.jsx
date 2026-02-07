@@ -42,10 +42,7 @@ const ViewUsers = () => {
                 <td className='fw-bold'>{user.firstName}</td>
                 <td className='fst-italic'>{user.lastName}</td>
                 <td className='fst-italic'>{user.phone}</td>
-                <td className='fst-italic'>{user.email}</td>
-               
-               
-              
+                <td className='fst-italic'>{user.email}</td>    
               </tr>)
                 })
                }
