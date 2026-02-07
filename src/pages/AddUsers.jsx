@@ -1,5 +1,3 @@
-
-
 import axios from 'axios'
 import React, { useState } from 'react'
 
@@ -13,6 +11,24 @@ const AddUsers = () => {
 
   const  userSubmitHandler =(e)=>{
       e.preventDefault()
+
+      const { firstName, lastName, phone, email } = adduser
+
+      // 🔹 Input Validation
+      if(!firstName || !lastName || !phone || !email){
+        alert('All fields are required')
+        return
+      }
+
+      if(!/^\d{10}$/.test(phone)){
+        alert('Phone number must be 10 digits')
+        return
+      }
+
+      if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
+        alert('Enter a valid email address')
+        return
+      }
 
       console.log(adduser);
       axios.post(`https://usermanagement-server-v9wf.onrender.com`,adduser)
@@ -33,7 +49,6 @@ const AddUsers = () => {
               <h4 className="text-center mb-4">User Registration</h4>
 
               <form onSubmit={userSubmitHandler}>
-                {/* First Name */}
                 <div className="mb-3">
                   <label className="form-label">First Name</label>
                   <input
@@ -45,7 +60,6 @@ const AddUsers = () => {
                   />
                 </div>
 
-                {/* Last Name */}
                 <div className="mb-3">
                   <label className="form-label">Last Name</label>
                   <input
@@ -57,7 +71,6 @@ const AddUsers = () => {
                   />
                 </div>
 
-                {/* Phone Number */}
                 <div className="mb-3">
                   <label className="form-label">Phone Number</label>
                   <input
@@ -69,7 +82,6 @@ const AddUsers = () => {
                   />
                 </div>
 
-                {/* Email Address */}
                 <div className="mb-3">
                   <label className="form-label">Email Address</label>
                   <input
@@ -81,11 +93,11 @@ const AddUsers = () => {
                   />
                 </div>
 
-                {/* Submit Button */}
                 <div>
-                      <input  className='form-control btn my-3 bg-primary' type='submit'/>
+                  <input className='form-control btn my-3 bg-primary' type='submit'/>
                 </div>
               </form>
+
             </div>
           </div>
         </div>
