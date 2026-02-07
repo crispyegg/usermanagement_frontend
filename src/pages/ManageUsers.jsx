@@ -43,7 +43,7 @@ const ManageUsers = () => {
 
    const updateSubmitHandler = (e)=>{
         e.preventDefault();
-        axios.put(`https://usermanagement-server-v9wf.onrender.com/${editUser._id}`,editUser)
+        axios.put(`https://usermanagement-server-v9wf.onrender.com/users/${editUser._id}`,editUser)
         .then(()=>{
           alert('User Updated')
         })
