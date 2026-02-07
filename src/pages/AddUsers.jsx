@@ -15,7 +15,7 @@ const AddUsers = () => {
       e.preventDefault()
 
       console.log(adduser);
-      axios.post(`http://localhost:4000/users`,adduser)
+      axios.post(`https://usermanagement-server-v9wf.onrender.com`,adduser)
       .then((res)=>{
         alert('User Added Successfully')
       })

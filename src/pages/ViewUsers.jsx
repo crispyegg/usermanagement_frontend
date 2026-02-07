@@ -9,7 +9,7 @@ const ViewUsers = () => {
    const [userData,setUserData]= useState([])
 
    useEffect(()=>{
-       axios.get(`http://localhost:4000/users`)
+       axios.get(`https://usermanagement-server-v9wf.onrender.com/users`)
        .then((res)=>{
         setUserData(res.data)
        })

@@ -9,7 +9,7 @@ const ManageUsers = () => {
   //to fetch the user
       useEffect(() => {
         axios
-          .get(`http://localhost:4000/users`)
+          .get(`https://usermanagement-server-v9wf.onrender.com/users`)
           .then((res) => {
             setUserData(res.data);
           })
@@ -21,7 +21,7 @@ const ManageUsers = () => {
   //to delete user
       const deleteUser = (uid) => {
         axios
-          .delete(`http://localhost:4000/users/${uid}`)
+          .delete(`https://usermanagement-server-v9wf.onrender.com/users/${uid}`)
           .then(() => {
             alert("User Deleted");
           })
@@ -31,7 +31,7 @@ const ManageUsers = () => {
       };
  //to get one user data into the modal
       const getOneRecord = (uid)=>{
-        axios.get(`http://localhost:4000/users/${uid}`)
+        axios.get(`https://usermanagement-server-v9wf.onrender.com/users/${uid}`)
         .then((res)=>{
           setEditUser(res.data)
         })
@@ -43,7 +43,7 @@ const ManageUsers = () => {
 
    const updateSubmitHandler = (e)=>{
         e.preventDefault();
-        axios.put(`http://localhost:4000/users/${editUser._id}`,editUser)
+        axios.put(`https://usermanagement-server-v9wf.onrender.com/${editUser._id}`,editUser)
         .then(()=>{
           alert('User Updated')
         })
